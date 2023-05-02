@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  color: hsl(240, 6%, 50%);
+}
+
+body {
+  background-image: linear-gradient(
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.faq {
+  display: flex;
+  width: 900px;
+  background: 
+  url(images/illustration-woman-online-desktop.svg) bottom 4rem left -7rem no-repeat,
+  url(images/bg-pattern-desktop.svg) bottom -6rem left -27.5rem / 80% no-repeat;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 1rem 2rem 2rem rgba(47, 52, 54, 0.274);
+}
+
+.faq__images {
+  flex: 1;
+  position: relative;
+  padding: 4rem;
+}
+
+.faq__images::before {
+  content: url(images/illustration-box-desktop.svg);
+  position: absolute;
+  left: -8rem;
+  top: 40%;
+}
+
+.faq__content {
+  flex: 1;
+  padding: 4rem 5rem 5rem 2rem;
+}
+
+.faq__content__title {
+  color: hsl(238, 29%, 16%);
+  font-size: 2.5rem;
+}
+
+.faq__content__items {
+  margin-top: 1.5rem;
+}
+
+.faq__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid hsla(240, 4%, 56%, 0.303);
+}
+
+.faq__item__title {
+  color: hsl(237, 12%, 33%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5rem 3rem 1.5rem 0;
+  transition: color 0.3s;
+}
+
+.faq__item__title:hover {
+  cursor: pointer;
+  color: hsl(14, 88%, 65%);
+}
+
+.faq__item__title::after {
+  content: url(images/icon-arrow-down.svg);
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.3s;
+}
+
+.faq__item__title.active {
+  font-weight: 700;
+}
+
+.faq__item__title.active::after {
+  transform: rotate(180deg);
+}
+
+.faq__item__body {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s;
+}
+
+.faq__item__body p {
+  padding: 0 0 1.5rem 0;
+}
+
+ @media (max-width: 960px) {
+  .faq {
+    margin: 12rem 0 3rem 0;
+    width: 85%;
+    flex-direction: column;
+    background: url(images/bg-pattern-mobile.svg) top center no-repeat;
+    background-color: white;
+    position: relative;
+  }
+
+  .faq__content__title {
+    text-align: center;
+  }
+
+  .faq__images::before {
+    content: url(images/illustration-woman-online-mobile.svg);
+    position: absolute;
+    top: -9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+  }
+
+  .faq__content {
+    flex: 1;
+    padding: 4rem 2rem;
+  }
+
+  .faq__item__title:hover {
+    color: hsl(237, 12%, 33%);
+  }
+
+  .faq__item__title:active {
+    color: hsl(14, 88%, 65%);
+  }
+}
